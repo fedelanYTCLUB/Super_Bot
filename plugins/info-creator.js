@@ -9,11 +9,11 @@ async function handler(m, { conn }) {
   const numCreador = '5491156178758';
   const ownerJid = numCreador + '@s.whatsapp.net';
 
-  const name = await conn.getName(ownerJid) || '―͟͞🍀ཐི⟅͓̽𝆥𝓕ₑ𝒹ₑ⟆𝇃𝇄⳻͜⳺𝇄𝇃ཋྀ𐙚';
+  const name = await conn.getName(ownerJid) || '𝓕ₑ𝒹ₑ';
   const about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || `Hola. me llamo fede. andoy aprendiendo cosas de bots 
 
 Cada día me esfuerzo por aprender algo nuevo, mejorar mis habilidades y ofrecer soluciones eficientes y creativas a quienes confían en mi trabajo`;
-  const empresa = '―͟͞🍀ཐི⟅͓̽𝆥𝓕ₑ𝒹ₑ⟆𝇃𝇄⳻͜⳺𝇄𝇃ཋྀ𐙚 - Servicios Tecnológicos';
+  const empresa = '𝓕ₑ𝒹ₑ - Servicios Tecnológicos';
 
 
   const vcard = `
