@@ -37,9 +37,9 @@ global.namecomu = '𝗖𝗼𝗺𝘂𝗻𝗶𝗱𝗮𝗱 ⏤͟͞ 𝐓𝐇𝐄 �
 global.listo = '⚔️ *Aquí tienes perra*'
 
 //Ids channel
-global.idchannel = '120363307694217288@newsletter'
-global.canalIdM = ["120363307694217288@newsletter", "120363307694217288@newsletter"]
-global.canalNombreM = ["⏤͟͞㋡ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 ", "㋡ 𝐓𝐇𝐄 𝐋𝐄𝐆𝐄𝐍𝐃𝐒 "]
+global.idchannel = '120363420017244077@newsletter'
+global.canalIdM = ["120363420017244077@newsletter", "120363420017244077@newsletter"]
+global.canalNombreM = ["✦ ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ ᥴһᥲᥒᥒᥱᥣ ❀", "✦ ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ ᥴһᥲᥒᥒᥱᥣ ❀ "]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
