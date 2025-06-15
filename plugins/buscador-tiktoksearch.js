@@ -1,60 +1,106 @@
-import axios from 'axios'
-const {proto, generateWAMessageFromContent, prepareWAMessageMedia, generateWAMessageContent, getDevice} = (await import("@whiskeysockets/baileys")).default
 
-let handler = async (message, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(message.chat, `${emoji} Por favor, ingrese lo que desea buscar en tiktok.`, message)
-async function createVideoMessage(url) {
-const { videoMessage } = await generateWAMessageContent({ video: { url } }, { upload: conn.waUploadToServer })
-return videoMessage
-}
-async function shuffleArray(array) {
-for (let i = array.length - 1; i > 0; i--) {
-const j = Math.floor(Math.random() * (i + 1));
-[array[i], array[j]] = [array[j], array[i]]
-}
-}
-try {
-await message.react(rwait)
-conn.reply(message.chat, `${emoji2} Descargando Su Video, espere un momento...`, message)
-let results = []
-let { data: response } = await axios.get('https://apis-starlights-team.koyeb.app/starlight/tiktoksearch?text=' + text)
-let searchResults = response.data
-shuffleArray(searchResults)
-let selectedResults = searchResults.splice(0, 7)
-for (let result of selectedResults) {
-results.push({
-body: proto.Message.InteractiveMessage.Body.fromObject({ text: null }),
-footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: dev }),
-header: proto.Message.InteractiveMessage.Header.fromObject({
-title: '' + result.title,
-hasMediaAttachment: true,
-videoMessage: await createVideoMessage(result.nowm)
-}),
-nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({ buttons: [] })})}
-const responseMessage = generateWAMessageFromContent(message.chat, {
-viewOnceMessage: {
-message: {
-messageContextInfo: {
-deviceListMetadata: {},
-deviceListMetadataVersion: 2
-},
-interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-body: proto.Message.InteractiveMessage.Body.create({ text: `${emoji} Resultado de: ` + text }),
-footer: proto.Message.InteractiveMessage.Footer.create({ text: '⪛✰ Tiktok - Busquedas ✰⪜' }),
-header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
-carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...results] })})}}
-}, { quoted: message })
-await message.react(done)
-await conn.relayMessage(message.chat, responseMessage.message, { messageId: responseMessage.key.id })
+import axios from "axios";
+
+const handler = async (m, { conn, text}) => {
+    if (!text) return m.reply("🔍 *Por favor, ingresa un término de búsqueda para encontrar videos en TikTok.*");
+
+    try {
+        m.react("🔄");
+        let info = await tiktok.search(text);
+        let videoAleatorio = Math.floor(Math.random() * info.length);
+        let { metadata, estadisticas, author, media} = info[videoAleatorio];
+
+        let mensaje = `
+🎥 *Título:* ${metadata.titulo}
+⏳ *Duración:* ${metadata.duracion} segundos
+📅 *Creado:* ${metadata.creado}
+
+📊 *Estadísticas:*
+👀 *Reproducciones:* ${estadisticas.reproducciones}
+❤️ *Likes:* ${estadisticas.likes}
+💬 *Comentarios:* ${estadisticas.comentarios}
+🔄 *Compartidos:* ${estadisticas.compartidos}
+⬇️ *Descargas:* ${estadisticas.descargas}
+
+👤 *Autor:* ${author.name}
+`;
+
+        await conn.sendFile(m.chat, media.no_watermark, "tiktok_video.mp4", mensaje, m);
 } catch (error) {
-await conn.reply(message.chat, error.toString(), message)
-}}
+        console.error("❌ Error en la búsqueda de TikTok:", error);
+        m.reply("⚠️ *No se encontraron resultados o hubo un error en la API.*");
+}
+};
 
-handler.help = ['tiktoksearch <txt>']
-handler.tags = ['buscador']
-handler.command = ['tiktoksearch', 'ttss', 'tiktoks']
-handler.group = true
-handler.register = true
-handler.coin = 2
+handler.command = ["tiktoksearch"];
+export default handler;
 
-export default handler
+const tiktok = {
+    search: async function (q) {
+        try {
+            const data = {
+                count: 20,
+                cursor: 0,
+                web: 1,
+                hd: 1,
+                keywords: q,
+};
+
+            const config = {
+                method: "post",
+                url: "https://tikwm.com/api/feed/search",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    Accept: "application/json, text/javascript, */*; q=0.01",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "User-Agent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36",
+                    Referer: "https://tikwm.com/",
+},
+                data: data,
+};
+
+            const response = await axios(config);
+
+            if (response.data.data) {
+                return response.data.data.videos.map((video) => ({
+                    metadata: {
+                        titulo: video.title,
+                        duracion: video.duration,
+                        region: video.region,
+                        video_id: video.video_id,
+                        creado: new Date(video.create_time * 1000).toLocaleString("es-AR", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            hour: "numeric",
+                            minute: "numeric",
+                            second: "numeric",
+                            hour12: false,
+}),
+},
+                    estadisticas: {
+                        reproducciones: Number(video.play_count).toLocaleString(),
+                        likes: Number(video.digg_count).toLocaleString(),
+                        comentarios: Number(video.comment_count).toLocaleString(),
+                        compartidos: Number(video.share_count).toLocaleString(),
+                        descargas: Number(video.download_count).toLocaleString(),
+},
+                    author: {
+                        name: video.author.nickname,
+                        username: "@" + video.author.unique_id,
+},
+                    media: {
+                        no_watermark: "https://tikwm.com" + video.play,
+                        watermark: "https://tikwm.com" + video.wmplay,
+                        audio: "https://tikwm.com" + video.music,
+},
+}));
+} else {
+                throw new Error("Sin información disponible");
+}
+} catch (error) {
+            throw new Error("Error en la búsqueda de TikTok: " + error);
+}
+},
+};
