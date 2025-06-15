@@ -31,7 +31,7 @@ console.log(`Error : ${e}`)
 global.creador = 'Wa.me/525544876071'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'Wa.me/525544876071'
-global.namechannel = '𝖿ᥱძᥱᥣᥲᥒᥡ𝗍 '
+global.namechannel = '⏤͟͟͞͞𐔌̷ִ̼͊🌳 ̸̷᮫໊᷐͢᷍ᰍ ᥲ𝗌ᥙᥒᥲ-ᑲ᥆𝗍  ✧ ᥴһᥲᥒᥒᥱᥣ'
 global.namegrupo = ' ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ '
 global.namecomu = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ'
 global.listo = '⚔️ *Aquí tienes perra*'
