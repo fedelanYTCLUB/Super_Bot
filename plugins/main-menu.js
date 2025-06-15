@@ -101,7 +101,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let text = _text.replace(/%(\w+)/g, (_, key) => replace[key] || '')
 
     await conn.sendMessage(m.chat, {
-    text: `⌬ 📡 ᴄʏʙᴇʀ ᴍᴇɴᴜ sʏsᴛᴇᴍ ɪɴɪᴄɪᴀɴᴅᴏ...\n⚙️ Cargando comandos...`,
+    text: `⌛  𝗘𝗡𝗩𝗜𝗔𝗡𝗗𝗢 𝗦𝗨 𝗠𝗘𝗡𝗨 𝗘𝗦𝗣𝗘𝗥𝗘...\n𝗔𝗤𝗨𝗜 𝗧𝗜𝗘𝗡𝗘𝗦 𝗧𝗨𝗦 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦*`,
       mentions: [m.sender]
     }, { quoted: m })
 
