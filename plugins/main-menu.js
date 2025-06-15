@@ -109,6 +109,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       image: { url: 'https://github.com/fedelanYTCLUB.png' },
       caption: text,
       footer: '💖 ASUNA BOT SYSTEM 🍭',
+      buttons: [
+        { buttonId: `${_p}grupos`, buttonText: { displayText: '🌐 ＧＲＵＰＯＳ' }, type: 1 },
+        { buttonId: `${_p}code`, buttonText: { displayText: '🕹 ＳＥＲＢＯＴ' }, type: 1 }
+      ],
+      viewOnce: true
+    }, { quoted: m })
 
   } catch (e) {
     console.error(e)
@@ -127,4 +133,4 @@ function clockString(ms) {
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
-                         }
+      }
