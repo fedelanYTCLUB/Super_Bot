@@ -1,6 +1,6 @@
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-<h1 align="center">Black - Clover</h1>
+<h1 align="center">ASUNA-BOT</h1>
 <p align="center">
   <img src="https://qu.ax/FLKXQ.jpg" width="300">
 </p>
