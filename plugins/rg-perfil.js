@@ -50,7 +50,7 @@ var handler = async (m, { conn }) => {
 ◭ *E᥊⍴ᥱrіᥱᥒᥴіᥲ:* ${exp || 0}
 ⚡︎ *Rᥲᥒg᥆:* ${role}
 
-> ✧ ⍴ᥲrᥲ ᥱძі𝗍ᥲr 𝗍ᥙ ⍴ᥱr𝖿іᥣ ᥙsᥲ *#perfildates*`.trim();
+> ✧ ⍴ᥲrᥲ ver 𝗍ᥙ ⍴ᥱr𝖿іᥣ ᥙsᥲ *#perfil*`.trim();
 
     conn.sendFile(m.chat, pp, 'perfil.jpg', `${premium ? prem.trim() : noprem.trim()}`, m, { mentions: [who] });
 }
