@@ -1,19 +1,52 @@
-import fetch from 'node-fetch'
+// Código creado por Deylin
+// https://github.com/deylinqff
+// No quites créditos
 
-let handler = async (m, { conn }) => {
-  let txt_owner = "`𝙷𝙾𝙻𝙰, 𝙴𝚂𝚃𝙴 𝙴𝚂 𝙴𝙻 𝙽𝚄𝙼𝙴𝚁𝙾 𝙳𝙴 𝙼𝙸 𝙲𝚁𝙴𝙰𝙳𝙾𝚁, 𝙲𝚄𝙰𝙻𝚀𝚄𝙸𝙴𝚁 𝙵𝙰𝙻𝙻𝙰 𝙾 𝚂𝙸 𝚀𝚄𝙸𝙴𝚁𝙴𝚂 𝙰𝙶𝚁𝙴𝙶𝙰𝚁 𝙴𝙻 𝙱𝙾𝚃 𝙰 𝚃𝚄 𝙶𝚁𝚄𝙿𝙾, 𝙿𝚄𝙴𝙳𝙴𝚂 𝙷𝙰𝙱𝙻𝙰𝚁𝙻𝙴`\n\n  𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒: +525544876071"
-  try {
-    let res = await fetch("https://files.catbox.moe/l1ahc0.jpg")
-    let buffer = await res.buffer()
-    await conn.sendFile(m.chat, buffer, 'thumbnail.jpg', txt_owner, m)
-  } catch (e) {
-    console.error(e)
-    m.reply('❌ No se pudo enviar la imagen del creador. Intenta más tarde.')
-  }
+import PhoneNumber from 'awesome-phonenumber';
+
+async function handler(m, { conn }) {
+  m.react('👑');
+  const numCreador = '5491156178758';
+  const ownerJid = numCreador + '@s.whatsapp.net';
+
+  const name = await conn.getName(ownerJid) || 'FedelanYT';
+  const about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || `Hola. me llamo fede. andoy aprendiendo cosas de bots 
+
+Cada día me esfuerzo por aprender algo nuevo, mejorar mis habilidades y ofrecer soluciones eficientes y creativas a quienes confían en mi trabajo`;
+  const empresa = 'fede - Servicios Tecnológicos';
+
+
+  const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+N:;${name};;;
+FN:${name}
+ORG:${empresa};
+TITLE:CEO & Fundador
+TEL;waid=${numCreador}:${new PhoneNumber('+' + numCreador).getNumber('international')}
+EMAIL:correo@empresa.com
+URL:https://www.tuempresa.com
+NOTE:${about}
+ADR:;;Dirección de tu empresa;;;;
+X-ABADR:ES
+X-ABLabel:Dirección Web
+X-ABLabel:Correo Electrónico
+X-ABLabel:Teléfono de contacto
+X-WA-BIZ-NAME:${name}
+X-WA-BIZ-DESCRIPTION:${about}
+END:VCARD
+  `.trim();
+
+
+  await conn.sendMessage(
+    m.chat,
+    { contacts: { displayName: name, contacts: [{ vcard }] } },
+    { quoted: fkontak }
+  );
 }
 
-handler.help = ['owner']
-handler.tags = ['main']
-handler.command = ['owner', 'creator', 'creador', 'dueño']
+handler.help = ['owner'];
+handler.tags = ['main'];
+handler.command = ['owner', 'creator', 'creador', 'dueño'];
 
-export default handler
+export default handler;
