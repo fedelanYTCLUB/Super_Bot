@@ -22,7 +22,7 @@ const defaultMenu = {
 ┃ 💙 𝚄𝚂𝚄𝙰𝚁𝙸𝙾: %name
 ┃ 💙 𝙼𝙾𝙳𝙾: %mode
 ┃ 💙 𝙴𝚂𝚃𝙰𝙳𝙾:  𝗢𝗡𝗟𝗜𝗡𝗘 👻
-╚══⫷🔻𝙽𝙴𝚃𝚁𝚄𝙽𝙽𝙴𝚁🔻⫸══╝
+╚═⫷🍭 𝗔𝗦𝗨𝗡𝗔_𝗕𝗢𝗧-𝗠𝗗 🍭⫸═╝
 
 ╭─[𝗘𝗦𝗧𝗔𝗗𝗢 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢]─╮
 │ 📊 𝗡𝗜𝗩𝗘𝗟: %level
@@ -101,14 +101,14 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let text = _text.replace(/%(\w+)/g, (_, key) => replace[key] || '')
 
     await conn.sendMessage(m.chat, {
-    text: `⌛  𝗘𝗡𝗩𝗜𝗔𝗡𝗗𝗢 𝗦𝗨 𝗠𝗘𝗡𝗨 𝗘𝗦𝗣𝗘𝗥𝗘...\n𝗔𝗤𝗨𝗜 𝗧𝗜𝗘𝗡𝗘𝗦 𝗧𝗨𝗦 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦*`,
+    text: `⌛ 𝗘𝗡𝗩𝗜𝗔𝗡𝗗𝗢 𝗦𝗨 𝗠𝗘𝗡𝗨 𝗘𝗦𝗣𝗘𝗥𝗘...\n𝗔𝗤𝗨𝗜 𝗧𝗜𝗘𝗡𝗘𝗦 𝗧𝗨𝗦 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦...`,
       mentions: [m.sender]
     }, { quoted: m })
 
     await conn.sendMessage(m.chat, {
       image: { url: 'https://github.com/fedelanYTCLUB.png' },
       caption: text,
-      footer: '🧠 BLACK CLOVER SYSTEM ☘️',
+      footer: '💖 ASUNA BOT SYSTEM 🍭',
       buttons: [
         { buttonId: `${_p}grupos`, buttonText: { displayText: '🌐 ＧＲＵＰＯＳ' }, type: 1 },
         { buttonId: `${_p}code`, buttonText: { displayText: '🕹 ＳＥＲＢＯＴ' }, type: 1 }
