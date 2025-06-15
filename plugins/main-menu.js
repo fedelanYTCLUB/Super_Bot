@@ -33,13 +33,13 @@ const defaultMenu = {
 
 🧬 *𝗡𝗢𝗗𝗢 𝗛𝗔𝗖𝗞 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗢*
 ✦ Elige un comando para ejecutar protocolo.
-✦ Operador: *The Carlos 👑*
+✦ creador: *FedelanYT 👑*
 
 %readmore
 `.trimStart(),
 
   header: '\n╭─〔 🦠 %category 〕─╮',
-  body: '│ ⚙️ %cmd\n',
+  body: '│ 💙 %cmd\n',
   footer: '╰────────────────╯',
   after: '\n⌬ 𝗖𝗬𝗕𝗘𝗥 𝗠𝗘𝗡𝗨 ☠️ - Sistema ejecutado con éxito.'
 }
