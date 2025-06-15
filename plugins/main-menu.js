@@ -106,7 +106,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     }, { quoted: m })
 
     await conn.sendMessage(m.chat, {
-      image: { url: 'https://qu.ax/FLKXQ.jpg' },
+      image: { url: 'https://qu.ax/FLKXQ.jpg'},
       caption: text,
       footer: '🧠 BLACK CLOVER SYSTEM ☘️',
       buttons: [
