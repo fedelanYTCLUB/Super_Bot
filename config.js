@@ -40,16 +40,16 @@ global.blackJadibts = true
 //*─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─*
 
 global.packsticker = `♾ ━━━━━━━━\n├ ɓσƭ:\n├ ρяοριєταяιο:\n├ ƒєϲнα ∂є ϲяєαϲιόи:\n├ нοяα:\n♾━━━━━━━━`
-global.packname = `𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘`
-global.author = `♾━━━━━━━━\n⇝͟͞𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘͟ ⋆\n⇝ ۵-̱̅ⁱ𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒-͞ˍ\n⇝ ${moment.tz('America/Los_Angeles').format('DD/MM/YY')}\n⇝ ${moment.tz('America/Los_Angeles').format('HH:mm:ss')} \n♾━━━━━━━━\n\n\n\nѕτιϲκєя ϐγ: ৎ𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘͟ `;
-global.wm = '𝑩𝒍𝒂𝒄𝒌 𝑪𝒍𝒐𝒗𝒆𝒓 ☘';
-global.titulowm = '𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘';
-global.igfg = 'ᥫ𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒'
-global.botname = '𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘'
-global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ the Legends ⚡'
-global.textbot = '𝑩𝑳𝑨𝑪𝑲 𝑪𝑳𝑶𝑽𝑬𝑹  : 𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒'
+global.packname = `ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘`
+global.author = `♾━━━━━━━━\n⇝͟͞ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ☘͟ ⋆\n⇝ ۵-̱̅𝖿ᥱძᥱᥣᥲᥒᥡ𝗍-͞ˍ\n⇝ ${moment.tz('America/Los_Angeles').format('DD/MM/YY')}\n⇝ ${moment.tz('America/Los_Angeles').format('HH:mm:ss')} \n♾━━━━━━━━\n\n\n\nѕτιϲκєя ϐγ: ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘͟ `;
+global.wm = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘';
+global.titulowm = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘';
+global.igfg = '𝖿ᥱძᥱᥣᥲᥒᥡ𝗍'
+global.botname = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘'
+global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ the 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍 ⚡'
+global.textbot = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ   : ძᥱ᥎ᥱᥣ᥆⍴ᥱძ ᑲᥡ 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍'
 global.gt = '͟͞𝕭𝖑𝖆𝖈𝖐 𝕮𝖑𝖔𝖛𝖊𝖗 ☘͟͞';
-global.namechannel = '𝑩𝑳𝑨𝑪𝑲 𝑪𝑳𝑶𝑽𝑬𝑹 / 𝐓𝐇𝐄 𝐂𝐀𝐑𝐋𝐎𝐒'
+global.namechannel = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  / 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍'
 
 //*─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─*
 
