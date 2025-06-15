@@ -1,111 +1,83 @@
-//código creado x The Carlos 👑
-//no olvides dejar créditos 
+import PhoneNumber from 'awesome-phonenumber';
+import fetch from 'node-fetch';
+import fs from 'fs';
 
-import PhoneNumber from 'awesome-phonenumber'
-import fetch from 'node-fetch'
-
-const imagen1 = 'https://telegra.ph/file/1c44fbd9883698c0d2b10.jpg' // Imagen de respaldo
+const loadMarriages = () => {
+    if (fs.existsSync('./media/database/marry.json')) {
+        const data = JSON.parse(fs.readFileSync('./media/database/marry.json', 'utf-8'));
+        global.db.data.marriages = data;
+    } else {
+        global.db.data.marriages = {};
+    }
+};
 
 var handler = async (m, { conn }) => {
-  let who = m.mentionedJid && m.mentionedJid[0]
-    ? m.mentionedJid[0]
-    : m.fromMe
-    ? conn.user.jid
-    : m.sender
+    loadMarriages();
 
-  let pp = await conn.profilePictureUrl(who, 'image').catch(_ => imagen1)
-  let user = global.db.data.users[m.sender]
-
-  if (!user) {
-    user = global.db.data.users[m.sender] = {
-      premium: false,
-      level: 0,
-      cookies: 0,
-      exp: 0,
-      lastclaim: 0,
-      registered: false,
-      regTime: -1,
-      age: 0,
-      role: '⭑ Novato ⭑'
+    let who;
+    if (m.quoted && m.quoted.sender) {
+        who = m.quoted.sender;
+    } else {
+        who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
     }
-  }
 
-  let { premium, level, exp, registered, role } = user
-  let username = await conn.getName(who)
+    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://i.ibb.co/d0sfxs0T/file.jpg');
+    let { premium, level, genre, birth, description, estrellas, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[who] || {};
+    let username = conn.getName(who);
 
-  // 🎬 Animación estilo grimorio
-  let animacion = `
-〘 *Sistema Mágico * 〙📖
+    genre = genre === 0 ? 'No especificado' : genre || 'No especificado';
+    age = registered ? (age || 'Desconocido') : 'Sin especificar';
+    birth = birth || 'No Establecido';
+    description = description || 'Sin Descripción';
+    role = role || 'Aldeano';
+    let isMarried = who in global.db.data.marriages;
+    let partner = isMarried ? global.db.data.marriages[who] : null;
+    let partnerName = partner ? conn.getName(partner) : 'Nadie';
 
-🔒 Detectando energía mágica...
-⏳ Analizando grimorio del portador...
-💠 Sincronizando con el maná...
+    let noprem = `
+《★》𝗣𝗲𝗿𝗳𝗶𝗹 𝗗𝗲 𝗨𝘀𝘂𝗮𝗿𝗶𝗼 ᰔᩚ
+❀  *N᥆mᑲrᥱ:* ${username}
+❖  *Eძᥲძ:* ${age}
+⚥  *Gᥱᥒᥱr᥆:* ${genre}
+❀  *Cᥙm⍴ᥣᥱᥲᥒ̃᥆s:* ${birth} 
+♡  *Cᥲsᥲძ@:* ${isMarried ? partnerName : 'Nadie'}
+✎  *Dᥱsᥴrі⍴ᥴі᥆́ᥒ:* ${description}
+❍  *Rᥱgіs𝗍rᥲძ᥆:* ${registered ? '✅': '❌'}
 
-✨✨✨ 𝙰𝙲𝚃𝙸𝚅𝙰𝙲𝙸𝙾́𝙽 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙰 ✨✨✨
+「 ✦ *Recursos - User* 」
+✩ *Es𝗍rᥱᥣᥣᥲs:* ${estrellas || 0}
+≛ *Nivel:* ${level || 0}
+◭ *E᥊⍴ᥱrіᥱᥒᥴіᥲ:* ${exp || 0}
+⚡︎ *Rᥲᥒg᥆:* ${role}
 
-*El grimorio se ha abierto...*
-`.trim()
+> ✧ ⍴ᥲrᥲ ᥱძі𝗍ᥲr 𝗍ᥙ ⍴ᥱr𝖿іᥣ ᥙsᥲ *#perfildates*`.trim();
 
-  await m.reply(animacion)
+    let prem = `╭──⪩ 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 ⪨
+│⧼👤⧽ *ᴜsᴜᴀʀɪᴏ:* *${username}*
+│⧼💠⧽ *ᴇᴅᴀᴅ:* *${age}*
+│⧼⚧️⧽ *ɢᴇɴᴇʀᴏ:* *${genre}*
+│⧼🎂⧽ *ᴄᴜᴍᴘʟᴇᴀɴ̃ᴏs:* ${birth}
+│⧼👩‍❤️‍👩⧽ *ᴄᴀsᴀᴅᴏ:* ${isMarried ? partnerName : 'Nadie'}
+📜 *ᴅᴇsᴄʀɪᴘᴄɪᴏɴ:* ${description}
+│⧼🌀⧽ *ʀᴇɢɪsᴛʀᴀᴅᴏ:* ${registered ? '✅': '❌'}
 
-  // 🧙 Usuarios normales
-  let noprem = `
-『 ＧＲＩＭＯＲＩＯ ＢＡＳＥ 』📕
+╰─────────────────⪨
 
-⚔️ *Portador:* ${username}
-🆔 *Identificador:* @${who.replace(/@.+/, '')}
-📜 *Registrado:* ${registered ? '✅ Activado' : '❌ No'}
+╭────⪩ 𝐑𝐄𝐂𝐔𝐑𝐒𝐎𝐒 ⪨
+│⧼💴⧽ *estrellas:* ${estrellas || 0}
+│⧼🌟⧽ *ɴɪᴠᴇʟ:* ${level || 0}
+│⧼✨⧽ *ᴇxᴘᴇʀɪᴇɴᴄɪᴀ:* ${exp || 0}
+│⧼⚜️⧽ *ʀᴀɴɢᴏ:* ${role}
+╰───⪨ *𝓤𝓼𝓾𝓪𝓻𝓲𝓸 𝓓𝓮𝓼𝓽𝓪𝓬𝓪𝓭𝓸* ⪩`.trim();
 
-🧪 *Estado Mágico:*
-⚡ *Nivel:* ${level}
-✨ *Experiencia:* ${exp}
-📈 *Rango:* ${role}
-🔮 *Premium:* ❌ No activo
-
-📔 *Grimorio:* Básico de 1 hoja 📘
-🔒 *Elemento:* Desconocido
-
-📌 Mejora tu grimorio para desbloquear más magia...
-
-━━━━━━━━━━━━━━━━━━━━
-`.trim()
-
-  // 🔥 Usuarios Premium (Modo Demonio + Hechizos)
-  let prem = `
-👹〘 𝐌𝐎𝐃𝐎 𝐃𝐄𝐌𝐎𝐍𝐈𝐎: *𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎* 〙👹
-
-🌌 ＧＲＩＭＯＲＩＯ ５ＬＴ（Ａ』
-
-🧛 *Portador Élite:* ${username}
-🧿 *ID:* @${who.replace(/@.+/, '')}
-✅ *Registrado:* ${registered ? 'Sí' : 'No'}
-👑 *Rango:* 🟣 *Supremo Demoníaco*
-
-🔮 *Energía Oscura:*
-⚡ *Nivel:* ${level}
-🌟 *Experiencia:* ${exp}
-🪄 *Rango Mágico:* ${role}
-💠 *Estado Premium:* ✅ ACTIVADO
-
-📕 *Grimorio:* ☯️ Anti-Magia de 5 hojas
-🔥 *Modo Especial:* ✦ *Despertar Oscuro de Asta*
-🧩 *Elemento:* Anti-Magia & Espada Demoníaca
-
-📜 *Hechizo Desbloqueado:* 
-❖ 「𝙱𝚕𝚊𝚌𝚔 the Legends  ⚡」
-   ↳ Daño masivo a bots enemigos.
-
-📔 *Nota:* Este usuario ha superado sus límites... ☄️
-
-🌌⟣═══════════════⟢🌌
-`.trim()
-
-  await conn.sendFile(m.chat, pp, 'grimorio_demon.jpg', premium ? prem : noprem, m, undefined, { mentions: [who] })
+    conn.sendFile(m.chat, pp, 'perfil.jpg', `${premium ? prem.trim() : noprem.trim()}`, m, { mentions: [who] });
 }
 
-handler.help = ['profile']
-handler.register = true
-handler.group = true
-handler.tags = ['rg']
-handler.command = ['profile', 'perfil']
-export default handler
+handler.help = ['profile'];
+handler.register = true;
+handler.group = false;
+handler.tags = ['rg'];
+handler.command = ['profile', 'perfil'];
+handler.estrellas = 2;
+
+export default handler;
