@@ -1,22 +1,10 @@
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-# Deja tu estrellita 🌟 
-
-> *👑* **El mejor Bot de WhatsApp** *⚔️*
-
 <h1 align="center">Black - Clover</h1>
 <p align="center">
   <img src="https://files.catbox.moe/0ro3o9.jpg" width="300">
 </p>
 
-<p align="center">
-  <a href="https://wa.me/525544876071">
-    <img title="Autor" src="https://img.shields.io/badge/CARLOS OFC-black?style=for-the-badge&logo=whatsapp">
-  </a>
-  <a href="https://instagram.com/_carlitos.zx">
-    <img title="Instagram del creador" src="https://img.shields.io/badge/@_carlitos.zx-purple?style=for-the-badge&logo=instagram">
-  </a>
-</p>
 
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
@@ -78,7 +66,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/thecarlos19/black-clover-MD && cd black-clover-MD
+git clone https://github.com/fedelanYTCLUB/Super_Bot && cd Super_Bot
 ```
 
 ```bash
@@ -104,7 +92,7 @@ apt update && apt upgrade
 ```
 
 ```bash
-git clone https://github.com/thecarlos19/black-clover-MD && cd black-clover-MD
+git clone https://github.com/fedelanYTCLUB/Super_Bot && cd Super_Bot
 ```
 
 ```bash
