@@ -21,9 +21,8 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   if (m.messageStubType == 27) {
     const bienvenida = `
-🟣 ASTA-BOT v2077 — Bienvenido
+ 🍭 Hola, Bienvenido 👤 ${user}
 
-👤 Usuario: ${user}
 📍 Grupo: ${groupMetadata.subject}
 🔗 Estado: Conectado
 👥 Miembros: ${total}
@@ -35,9 +34,8 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   if ([28, 32].includes(m.messageStubType)) {
     const despedida = `
-🔻 ASTA-BOT v2077 — Nunca vuelvas
+🍭 Hasta luego 👤 ${user}
 
-👤 Usuario: ${user}
 📍 Grupo: ${groupMetadata.subject}
 🔌 Estado: Desconectado
 👥 Miembros: ${total}
