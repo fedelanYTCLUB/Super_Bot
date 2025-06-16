@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   let totalreg = Object.keys(global.db.data.users).length;
   let totalchats = Object.keys(global.db.data.chats).length;
   let vs = global.vs || '1.0.0';
-  let pp = "https://files.catbox.moe/8lfoj3.jpg";
+  let pp = "https://files.catbox.moe/req69c.jpg";
 
   // Tiempo de actividad
   if (process.send) {
@@ -33,10 +33,10 @@ let handler = async (m, { conn, usedPrefix }) => {
   let blackclover= `
 ╭━━━━◇◇◇━━━━⬣
 ┃ ⚙️  *SISTEMA DE ESTADO*
-┃ 🔰 *BLACK CLOVER BOT* ⚔️
+┃ 🔰 *ASUNA BOT Al* 💖
 ╰━━━━◇◇◇━━━━⬣
 
-👑 *Creador:* the-carlos
+👑 *Creador:* fede el crack
 📟 *Prefijo:* [ ${usedPrefix} ]
 📦 *Versión:* ${vs}
 
