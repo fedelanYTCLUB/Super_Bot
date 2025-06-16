@@ -29,7 +29,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
 ⌬ Usa *#help* para ver los comandos disponibles
 `
-    await conn.sendMini(m.chat, '🚀 CONEXIÓN ESTABLECIDA', 'ASTA-BOT', bienvenida, img, img, null, contacto)
+    await conn.sendMini(m.chat, '🚀 CONEXIÓN ESTABLECIDA', 'ASUNA-BOT', bienvenida, img, img, null, contacto)
   }
 
   if ([28, 32].includes(m.messageStubType)) {
@@ -42,6 +42,6 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
 ⌬ Datos eliminados correctamente
 `
-    await conn.sendMini(m.chat, '⚠️ DESCONECTADO DEL SISTEMA', 'ASTA-BOT', despedida, img, img, null, contacto)
+    await conn.sendMini(m.chat, '⚠️ DESCONECTADO DEL SISTEMA', 'ASUNA-BOT', despedida, img, img, null, contacto)
   }
 }
