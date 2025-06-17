@@ -20,7 +20,7 @@ const defaultMenu = {
   before: `🖥️ *INFO - BOT* 🖥️ 
 │ *𝚄𝚂𝚄𝙰𝚁𝙸𝙾:* %name
 │ *𝙼𝙾𝙳𝙾:* %mode
-│ &MODO:* » ${(conn.user.jid == global.conn.user.jid ? '`PRINCIPAL`' : '`SUB-BOT`')}
+│ *MODO:* » ${(conn.user.jid == global.conn.user.jid ? '`PRINCIPAL`' : '`SUB-BOT`')}
 ╰─❒ 𝗔𝗦𝗨𝗡𝗔 – 𝗕𝗢𝗧 ❒─╯
 
 ╭─❒「 𝗘𝗦𝗧𝗔𝗗𝗢 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 」
