@@ -33,7 +33,7 @@ const defaultMenu = {
 ╰━━━━━━━━━━━━━━━━╯
 
 🧬 *𝗠𝗢𝗗𝗢 𝗠𝗘𝗡𝗨 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗢*
-> Si deseas ser parte del bot usa modo *#code* o modo *#Qr*
+> Si deseas ser parte del bot usa *#code* o *#Qr*
 
 %readmore
 `.trimStart(),
