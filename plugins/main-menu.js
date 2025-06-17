@@ -33,8 +33,7 @@ const defaultMenu = {
 ╰──────────────────╯
 
 🧬 *𝗠𝗢𝗗𝗢 𝗠𝗘𝗡𝗨 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗢*
-✦ Elige un comando para ejecutar protocolo.
-✦ creador: *FedelanYT 👑*
+> Si deseas ser parte del bot usa modo *#code* o modo *#Qr*
 
 %readmore
 `.trimStart(),
