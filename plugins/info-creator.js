@@ -1,52 +1,46 @@
-// Código creado por Deylin
-// https://github.com/deylinqff
-// No quites créditos
+import fetch from 'node-fetch';
 
-import PhoneNumber from 'awesome-phonenumber';
+let handler = async (m, { conn, usedPrefix, text, args, command }) => {
+   await m.react('👤');
 
-async function handler(m, { conn }) {
-  m.react('👑');
-  const numCreador = '5491156178758';
-  const ownerJid = numCreador + '@s.whatsapp.net';
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
+    let name = await conn.getName(who);
+    let edtr = `@${m.sender.split`@`[0]}`;
+    let username = conn.getName(m.sender);
 
-  const name = await conn.getName(ownerJid) || 'fede';
-  const about = (await conn.fetchStatus(ownerJid).catch(() => {}))?.status || `Hola. me llamo fede. andoy aprendiendo cosas de bots 
+    // VCARD
+    let list = [{
+        displayName: "fede",
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: fedelanyt\nitem1.TEL;waid=5491156178758:5491156178758\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: fedelanyt20@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:nada\nitem3.X-ABLabel:Internet\nitem4.ADR:;; Argentina;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
+    }];
 
-Cada día me esfuerzo por aprender algo nuevo, mejorar mis habilidades y ofrecer soluciones eficientes y creativas a quienes confían en mi trabajo`;
-  const empresa = 'fede - Servicios Tecnológicos';
+    await conn.sendMessage(m.chat, {
+        contacts: {
+            displayName: `${list.length} Contacto`,
+            contacts: list
+        },
+        contextInfo: {
+            externalAdReply: {
+                showAdAttribution: true,
+                title: 'hola ',
+                body: dev,
+                thumbnailUrl: 'https://cdnmega.vercel.app/media/c4hhgZgD@fGOHhRAM1CD-3_cpAQk-Q86yQnQLGHYKZ1M0P_heI9s',
+                sourceUrl: 'https://github.com/',
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    }, {
+        quoted: m
+    });
 
+    let txt = `👋 *Hola \`${username}\` este es*\n*el contacto de mi creador*`;
 
-  const vcard = `
-BEGIN:VCARD
-VERSION:3.0
-N:;${name};;;
-FN:${name}
-ORG:${empresa};
-TITLE:CEO & Fundador
-TEL;waid=${numCreador}:${new PhoneNumber('+' + numCreador).getNumber('international')}
-EMAIL:correo@empresa.com
-URL:https://www.tuempresa.com
-NOTE:${about}
-ADR:;;Dirección de tu empresa;;;;
-X-ABADR:ES
-X-ABLabel:Dirección Web
-X-ABLabel:Correo Electrónico
-X-ABLabel:Teléfono de contacto
-X-WA-BIZ-NAME:${name}
-X-WA-BIZ-DESCRIPTION:${about}
-END:VCARD
-  `.trim();
+    await conn.sendMessage(m.chat, { text: txt });
+};
 
-
-  await conn.sendMessage(
-    m.chat,
-    { contacts: { displayName: name, contacts: [{ vcard }] } },
-    { quoted: fkontak }
-  );
-}
-
-handler.help = ['owner'];
+handler.help = ['owner', 'creator'];
 handler.tags = ['main'];
-handler.command = ['owner', 'creator', 'creador', 'dueño'];
+handler.command = /^(owner|creator|creador|dueño)$/i;
 
 export default handler;
