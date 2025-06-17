@@ -31,7 +31,7 @@ async function handler(m, { conn: stars, usedPrefix }) {
 
 ${listado || '⚠️ No hay subbots activos en este momento.'}`.trim()
 
-  const imageUrl = 'https://files.catbox.moe/1jkle5.jpg' // ⚠️ Cambia esta URL si quieres usar otra imagen
+  const imageUrl = 'https://files.catbox.moe/kceq81.jpg' // ⚠️ Cambia esta URL si quieres usar otra imagen
 
   const fkontak = {
     key: {
