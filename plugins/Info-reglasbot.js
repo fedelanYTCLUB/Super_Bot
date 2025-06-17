@@ -14,10 +14,10 @@ let handler = async (m, { conn }) => {
 
 📔 *INFO:* Si se rompen las reglas, puedes ser baneado y bloqueado del bot.
 
-📝 *NOTA:* Este bot oficial es *BlackClover (OFC)*. No nos responsabilizamos por otros bots falsos. Usa *.owner* para verificar el staff oficial.
+📝 *NOTA:* Este bot oficial es *Asuna_Bot-Al (OFC)*. No nos responsabilizamos por otros bots falsos. Usa *.owner* para verificar el staff oficial.
 
 🌟 Si te gusta el bot, puedes visitar el repositorio y dejar una estrella.
-${global.md || 'https://github.com/thecarlos19/Black-Clover-MD'}  
+${global.md || 'https://github.com/fedelanYTCLUB/Super_Bot'}  
 `.trim()
 
   const imagen = imagen2 || 'https://i.imgur.com/U4BTrvK.jpeg' // Imagen predeterminada si no hay imagen2 definida
