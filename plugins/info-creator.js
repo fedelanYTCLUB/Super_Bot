@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         contextInfo: {
             externalAdReply: {
                 showAdAttribution: true,
-                title: 'hola ',
+                title: '𝐇𝐨𝐥𝐚, 𝐒𝐨𝐲 𝐅𝐞𝐝𝐞 𝐂𝐫𝐞𝐚𝐝𝐨𝐫 𝐝𝐞 𝐀𝐬𝐮𝐧𝐚',
                 body: dev,
                 thumbnailUrl: 'https://files.catbox.moe/ddv9lu.jpg',
                 sourceUrl: 'https://github.com/',
