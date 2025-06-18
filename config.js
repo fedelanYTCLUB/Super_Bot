@@ -41,16 +41,16 @@ global.blackJadibts = true
 //*─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─*
 
 global.packsticker = `♾ ━━━━━━━━\n├ ɓσƭ:\n├ ρяοριєταяιο:\n├ ƒєϲнα ∂є ϲяєαϲιόи:\n├ нοяα:\n♾━━━━━━━━`
-global.packname = `ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ ✨`
-global.author = `♾━━━━━━━━\n⇝͟͞ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ☘͟ ⋆\n⇝ ۵-̱̅𝖿ᥱძᥱᥣᥲᥒᥡ𝗍-͞ˍ\n⇝ ${moment.tz('America/Los_Angeles').format('DD/MM/YY')}\n⇝ ${moment.tz('America/Los_Angeles').format('HH:mm:ss')} \n♾━━━━━━━━\n\n\n\nѕτιϲκєя ϐγ: ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ☘͟ `;
-global.wm = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ  ✨';
-global.titulowm = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ ✨';
-global.igfg = '𝖿ᥱძᥱᥣᥲᥒᥡ𝗍'
-global.botname = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ ✨'
-global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍 ⚡'
-global.textbot = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ : ძᥱ᥎ᥱᥣ᥆⍴ᥱძ ᑲᥡ 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍'
+global.packname = `𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜 ✨`
+global.author = `♾━━━━━━━━\n⇝͟͞𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜☘͟ ⋆\n⇝ ۵-̱̅𝗳𝗲𝗱𝗲𝗹𝗮𝗻𝗬𝗧-͞ˍ\n⇝ ${moment.tz('America/Los_Angeles').format('DD/MM/YY')}\n⇝ ${moment.tz('America/Los_Angeles').format('HH:mm:ss')} \n♾━━━━━━━━\n\n\n\nѕτιϲκєя ϐγ: 𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜  ☘͟ `;
+global.wm = '𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜  ✨';
+global.titulowm = '𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜 ✨';
+global.igfg = '𝗳𝗲𝗱𝗲𝗹𝗮𝗻𝗬𝗧'
+global.botname = '𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜ᥣ ✨'
+global.dev = '© 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 𝗳𝗲𝗱𝗲𝗹𝗮𝗻𝗬𝗧⚡'
+global.textbot = '𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜ᥣ : 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐝 𝗕𝘆 𝗳𝗲𝗱𝗲𝗹𝗮𝗻𝗬𝗧 ✨'
 global.gt = '✨ 𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜 ✨';
-global.namechannel = 'ᥲsᥙᥒᥲᑲ᥆𝗍-ᥲᥣ / 𝖿ᥱძᥱᥣᥲᥒᥡ𝗍💖'
+global.namechannel = '𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜 / 𝗳𝗲𝗱𝗲𝗹𝗮𝗻𝗬𝗧 💖'
 
 //*─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─✞─ׄ─ׅ─ׄ─*
 
