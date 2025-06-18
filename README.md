@@ -1,6 +1,6 @@
 ![line](https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif)
 
-<h1 align="center">ASUNA-BOT</h1>
+<h1 align="center">♡̵̑ ASUNABOT-Al ♡̵̑</h1>
 <p align="center">
   <img src="https://files.catbox.moe/h1eizu.jpg" width="300">
 </p>
