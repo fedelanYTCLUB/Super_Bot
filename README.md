@@ -2,7 +2,7 @@
 
 <h1 align="center">ASUNA-BOT</h1>
 <p align="center">
-  <img src="https://qu.ax/FLKXQ.jpg" width="300">
+  <img src="https://files.catbox.moe/h1eizu.jpg" width="300">
 </p>
 
 
