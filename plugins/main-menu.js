@@ -29,36 +29,37 @@ let tags = {'main': '⚡ INFOBOT',
 const defaultMenu = {
 before: `> 「 %wm 」
  
- ╰┈➤  𝗔𝗦𝗨𝗡𝗔𝗕𝗢𝗧-𝗔𝗜
+ ╰┈➤  𝐊𝐚𝐧𝐭𝐮 - 𝐁𝐨𝐭
  
 ┏──────────────
 ┊ 『   *Info User* 』
 ┊ 「 ꛕ 」 𝑫𝒆𝒗 𝑩𝒚 𝑪𝒓𝒙𝒔𝑴𝒐𝒅𝒔
 ┗─────────────❐
-│👤 *Usuario:* %name
-│🌍 *Hora:* %hora
-│⚡ *Exp:* %totalexp XP 
-│💰 *Tu limite:* %limit
-│⭐️ *Rango:* %role
-│🧋┊ *Nivel »* %level
+│ᐉⴰ👤┊ *Usuario:* %name
+│ᐉⴰ🌍┊ *Hora:* %hora
+│ᐉⴰ⚡┊ *Exp:* %totalexp XP 
+│ᐉⴰ💰┊ *Tu limite:* %limit
+│ᐉⴰ⭐️┊ *Rango:* %role
+│ᐉⴰ🧋┊ *Nivel »* %level
 ╰ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒
 
 ┏──────────────
 ┊ 『   *Info Bot* 』
+┊ 「 ꛕ 」 𝑫𝒆𝒗 𝑩𝒚 𝑪𝒓𝒙𝒔𝑴𝒐𝒅𝒔
 ┗─────────────❐
-│👑 *Creador* »  fede
-│💎 *Tiempo activo:* %muptime
+│ᐉⴰ👑┊ *Author* »  𝑪𝒓𝒙𝒔𝑴𝒐𝒅𝒔
+│ᐉⴰ💎┊ *Tiempo activo:* %muptime
 %botOfc
-│☁️ *Librería » Baileys
-│📆 *Fecha:* %fecha
-│👥️️ *Usuarios »*  %rtotalreg de %totalreg
+│ᐉⴰ☁️┊ *Librería » Baileys
+│ᐉⴰ📆┊ *Fecha:* %fecha
+│ᐉⴰ👥️️┊ *Usuarios »*  %rtotalreg de %totalreg
 ╰─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒
 
 ${[`*\`✅ Streaming Barato:\`*\nhttps://hackstorex.com`, `Prefieres scrips para tu web?\nhttps://MexSpin.fun`].getRandom()}
 
 `.trimStart(),
-header: '┏────────\n┊\n┊ `『 *%category* 』`\n┊\n┊ 「 ꛕ 」 fedelanyt\n────────❐ ',
-body: ' │💎 %cmd %islimit %isPremium',
+header: '┏──────────────\n┊\n┊ `『 *%category* 』`\n┊\n┊ 「 ꛕ 」 𝑫𝒆𝒗  𝑪𝒓𝒙𝒔𝑴𝒐𝒅𝒔\n┗─────────────❐ ',
+body: ' │ᐉⴰ💎┊ %cmd %islimit %isPremium',
 footer: `╚• \n`,
 after: `
 `,
@@ -217,4 +218,4 @@ function toNum(number) {
     } else {
         return number.toString();
     }
-                     }
+ }
